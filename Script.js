@@ -311,7 +311,8 @@ function main(config) {
       "name": "Bybit",
       "type": "select",
       "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
-      "include-all": true
+      "include-all": true,
+      "icon": "https://fastly.jsdelivr.net/gh/Analoty/commom_icons@main/bybit.svg"
     },
     // 下面采用两种方案，按需求注释其中一个即可
     // 方案1 独立订阅
