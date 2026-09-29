@@ -145,12 +145,6 @@ const ruleProviders = {
     "behavior": "classical",
     "url": "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml",
     "path": "./ruleset/blackmatrix7/youtube.yaml"
-  },
-  "bybit": {
-    ...ruleProviderCommon,
-    "behavior": "classical",
-    "url": "https://fastly.jsdelivr.net/gh/Analoty/Clash_config@main/rules/Bybit.yaml",
-    "path": "./ruleset/custom/bybit.yaml"
   }
 };
 // 规则
@@ -172,8 +166,6 @@ const rules = [
   "RULE-SET,openai,ChatGPT",
   "RULE-SET,claude,Claude",
   "RULE-SET,youtube,YouTube",
-  // 自定义规则集（自建：rules/Bybit.yaml，域名清单来源 v2fly geosite:bybit）
-  "RULE-SET,bybit,Bybit",
   // Loyalsoldier 规则集
   "RULE-SET,applications,全局直连",
   "RULE-SET,private,全局直连",
@@ -190,9 +182,6 @@ const rules = [
   "RULE-SET,telegramcidr,电报消息,no-resolve",
   // 其他规则
   "GEOIP,LAN,全局直连,no-resolve",
-  // Bybit App 直连 UDP（腾讯云 IP：AS132203，无域名所以域名规则覆盖不到；IP 取自 2026-09-29 连接日志，可能变化，新增后在此补充）
-  "IP-CIDR,43.154.61.67/32,Bybit,no-resolve",
-  "IP-CIDR,43.135.121.179/32,Bybit,no-resolve",
   "GEOIP,CN,全局直连,no-resolve",
   "MATCH,漏网之鱼"
 ];
@@ -305,13 +294,6 @@ function main(config) {
       "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/google.svg"
-    },
-    {
-      ...groupBaseOption,
-      "name": "Bybit",
-      "type": "select",
-      "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
-      "include-all": true
     },
     // 下面采用两种方案，按需求注释其中一个即可
     // 方案1 独立订阅
