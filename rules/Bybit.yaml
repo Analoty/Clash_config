@@ -26,3 +26,4 @@ payload:
   # Bybit App 内嵌数据统计 SDK（子域名随机生成，域名规则覆盖不到，用关键字兜底）
   - DOMAIN-KEYWORD,sc-datasink
   - DOMAIN-KEYWORD,sc-abtest
+  - DOMAIN-KEYWORD,appsflyer
